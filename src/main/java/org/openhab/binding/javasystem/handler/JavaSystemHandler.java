@@ -69,8 +69,8 @@ public class JavaSystemHandler extends BaseThingHandler {
         updateState(channelFreeMemoryText, new StringType(FormatUtil.formatBytes(runtime.freeMemory())));
         updateState(channelTotalMemory, new DecimalType(runtime.totalMemory()));
         updateState(channelTotalMemoryText, new StringType(FormatUtil.formatBytes(runtime.totalMemory())));
-        updateState(channelMaxMemory, new DecimalType(runtime.totalMemory()));
-        updateState(channelMaxMemoryText, new StringType(FormatUtil.formatBytes(runtime.totalMemory())));
+        updateState(channelMaxMemory, new DecimalType(runtime.maxMemory()));
+        updateState(channelMaxMemoryText, new StringType(FormatUtil.formatBytes(runtime.maxMemory())));
     }
 
     /**
