@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="javasystem"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+	<!-- Sample Thing Type -->
+	<thing-type id="runtime">
+		<label>OpenHAB Java Runtime</label>
+		<description>The Java Runtime OpenHAB is running on.</description>
+		<channels>
+            <channel id="freeMemory" typeId="freeMemory-channel" />
+            <channel id="freeMemoryText" typeId="freeMemoryText-channel" />
+            <channel id="totalMemory" typeId="totalMemory-channel" />
+            <channel id="totalMemoryText" typeId="totalMemoryText-channel" />
+            <channel id="maxMemory" typeId="maxMemory-channel" />
+            <channel id="maxMemoryText" typeId="maxMemoryText-channel" />
+		</channels>
+	</thing-type>
+
+	<!-- Mode Channel Type -->
+    <channel-type id="freeMemory-channel">
+        <item-type>Number</item-type>
+        <label>Java free memory.</label>
+        <description>The free memory.
+        </description>
+    </channel-type>
+    <channel-type id="freeMemoryText-channel">
+        <item-type>String</item-type>
+        <label>Java free memory as text.</label>
+        <description>The free memory as text.
+        </description>
+    </channel-type>
+    <channel-type id="totalMemory-channel">
+        <item-type>Number</item-type>
+        <label>Java total memory.</label>
+        <description>The total memory.
+        </description>
+    </channel-type>
+    <channel-type id="totalMemoryText-channel">
+        <item-type>String</item-type>
+        <label>Java total memory as text.</label>
+        <description>The total memory as text.
+        </description>
+    </channel-type>
+    <channel-type id="maxMemory-channel">
+        <item-type>Number</item-type>
+        <label>Java maximum memory.</label>
+        <description>The maximum memory.
+        </description>
+    </channel-type>
+    <channel-type id="maxMemoryText-channel">
+        <item-type>String</item-type>
+        <label>Java maximum memory as text.</label>
+        <description>The maximum memory as text.
+        </description>
+    </channel-type>
+
+</thing:thing-descriptions>
