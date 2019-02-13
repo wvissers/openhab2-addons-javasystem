@@ -42,6 +42,8 @@ public class JavaSystemHandler extends BaseThingHandler {
     private final ChannelUID channelTotalMemoryText;
     private final ChannelUID channelMaxMemory;
     private final ChannelUID channelMaxMemoryText;
+    private final ChannelUID channelUsedMemoryPercent;
+    private final ChannelUID channelFreeMemoryPercent;
 
     // Scheduler
     ScheduledFuture<?> refreshJob;
@@ -54,6 +56,8 @@ public class JavaSystemHandler extends BaseThingHandler {
         channelTotalMemoryText = new ChannelUID(thing.getUID(), CHANNEL_TOTAL_MEMORY_TEXT);
         channelMaxMemory = new ChannelUID(thing.getUID(), CHANNEL_MAX_MEMORY);
         channelMaxMemoryText = new ChannelUID(thing.getUID(), CHANNEL_MAX_MEMORY_TEXT);
+        channelUsedMemoryPercent = new ChannelUID(thing.getUID(), CHANNEL_USED_MEMORY_PERCENT);
+        channelFreeMemoryPercent = new ChannelUID(thing.getUID(), CHANNEL_FREE_MEMORY_PERCENT);
     }
 
     @Override
@@ -71,6 +75,10 @@ public class JavaSystemHandler extends BaseThingHandler {
         updateState(channelTotalMemoryText, new StringType(FormatUtil.formatBytes(runtime.totalMemory())));
         updateState(channelMaxMemory, new DecimalType(runtime.maxMemory()));
         updateState(channelMaxMemoryText, new StringType(FormatUtil.formatBytes(runtime.maxMemory())));
+        updateState(channelUsedMemoryPercent,
+                new DecimalType((runtime.totalMemory() - runtime.freeMemory()) * 100 / runtime.maxMemory()));
+        updateState(channelFreeMemoryPercent, new DecimalType(
+                (runtime.freeMemory() + (runtime.maxMemory() - runtime.totalMemory())) * 100 / runtime.maxMemory()));
     }
 
     /**

@@ -15,6 +15,8 @@
             <channel id="totalMemoryText" typeId="totalMemoryText-channel" />
             <channel id="maxMemory" typeId="maxMemory-channel" />
             <channel id="maxMemoryText" typeId="maxMemoryText-channel" />
+            <channel id="usedMemoryPercent" typeId="usedMemoryPercent-channel" />
+            <channel id="freeMemoryPercent" typeId="freeMemoryPercent-channel" />
 		</channels>
 	</thing-type>
 
@@ -53,6 +55,18 @@
         <item-type>String</item-type>
         <label>Java maximum memory as text.</label>
         <description>The maximum memory as text.
+        </description>
+    </channel-type>
+    <channel-type id="usedMemoryPercent-channel">
+        <item-type>Number</item-type>
+        <label>Java used memory %.</label>
+        <description>The used memory percentage relative to max memory.
+        </description>
+    </channel-type>
+    <channel-type id="freeMemoryPercent-channel">
+        <item-type>Number</item-type>
+        <label>Java free memory %.</label>
+        <description>The free memory percentage relative to max memory.
         </description>
     </channel-type>
 

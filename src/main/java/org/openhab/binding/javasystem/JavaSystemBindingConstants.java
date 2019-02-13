@@ -30,5 +30,7 @@ public class JavaSystemBindingConstants {
     public final static String CHANNEL_TOTAL_MEMORY_TEXT = "totalMemoryText";
     public final static String CHANNEL_MAX_MEMORY = "maxMemory";
     public final static String CHANNEL_MAX_MEMORY_TEXT = "maxMemoryText";
+    public final static String CHANNEL_USED_MEMORY_PERCENT = "usedMemoryPercent";
+    public final static String CHANNEL_FREE_MEMORY_PERCENT = "freeMemoryPercent";
 
 }
